@@ -1,0 +1,15 @@
+{
+  "name": "typescript-study",
+  "version": "1.0.0",
+  "description": "타입스크립트 기초문법 올인원",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^5.0.4"
+  }
+}
