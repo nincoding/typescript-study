@@ -148,3 +148,36 @@ const arr3: Array<number> = [123, 456];
 const arr4: [number, number, string] = [1, 2, '3'];
 
 ```
+
+## 타입추론
+
+타입스크립트가 정확하게 타입을 추론해줬다면 건들일 필요가 없다.
+최대한 타입스크립트가 추론해주는것을 믿되, any로 추론이 나온다면 타입을 명확하게 해줘야한다.
+
+왠만하면 타입추론 잘되면 믿고 맡겨라, 그리고 타입은 좁게 정해라.
+
+```ts
+const a = 5; // a에 마우스를 올려보면 a = 5 라고 정확하게 추론하고 있다.
+// 굳이 const a: number = 5; 라고 5라고 추론한 것을 number로 바꾸지 않아도 된다는 소리임.
+// 만약 타입스크립트가 추론을 잘못했다면 그때 타입을 고친다. (또는 타입스크립트가 any라는 타입으로 코드를 추론한다 하는 경우)
+
+function add (x: number, y) { return x + y };
+const result = add(1, 2); // result의 타입추론이 any가 나온다. 이런경우 타입을 명확히 바꿔줘야한다.
+
+// function add (x: number, y:number) : number { return x + y }; 
+
+const arr = [123, 456, 'hello']; // 타입추론이 const arr: (string | number)[] 이 나온다.
+// | 는 파이프라고 하는데, 이렇게하면 타입스크립트가 멍청한 것 이다. 이런경우 직접 타이핑을 해주자.
+// const arr: [number, number, string] = [123, 456, 'hello'];
+
+// 이런식으로 타입부분이 길어지면 나중에 읽기 어려워진다. (타입하나가 여러줄일 경우)
+// 해결방법은 있다.
+const obj: {
+  lat: number,
+  lon: number
+} = {
+  lat: 37.5,
+  lon: 127.5
+};
+
+```

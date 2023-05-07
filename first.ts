@@ -19,3 +19,5 @@ function add(x: number, y: number) : number { return x + y };
 const add2: (x: number, y: number) => number = (x, y) => x + y;
 
 const obj: { lat: number, lon: number } = { lat: 37.5, lon: 127.5 };
+
+const arr = [123, 456, 'hello'];
